@@ -10,7 +10,7 @@ from streamlit_folium import st_folium
 model = joblib.load("credibility_model.pkl")
 
 # --- Load waste dataset ---
-df_waste = pd.read_csv("lagos_waste_cleaned.csv")
+df_waste = pd.read_csv("lagos_waste_cleaned (4).csv ")
 
 # --- Credibility scoring ---
 def predict_credibility(features):
