@@ -3,8 +3,6 @@ import pandas as pd
 import joblib
 from diffusers import StableDiffusionPipeline
 import torch
-import folium
-from streamlit_folium import st_folium
 
 # --- Load your trained credibility model ---
 model = joblib.load("credibility_model.pkl")
@@ -56,18 +54,4 @@ if st.button("Generate Waste Image"):
     img = generate_waste_image(listing['waste_subtype'])
     st.image(img, caption=f"Generated image for {listing['waste_subtype']}")
 
-# Map visualization
-st.subheader("Hotspot → Recycler Flows")
-lagos_map = folium.Map(location=[6.5244, 3.3792], zoom_start=12)
 
-# Example: add hotspot marker
-folium.CircleMarker(
-    location=[6.616, 3.349],  # Ikeja Market coords
-    radius=6,
-    color='red',
-    fill=True,
-    fill_color='red',
-    popup=f"Hotspot: {listing['location_city']} ({listing['Hierarchical_Category']})"
-).add_to(lagos_map)
-
-st_folium(lagos_map, width=700, height=500)
