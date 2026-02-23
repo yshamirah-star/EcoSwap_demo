@@ -1,13 +1,11 @@
 Pillow
 accelerate
 diffusers
-folium
 joblib
 numpy
 pandas
 safetensors
 scikit-learn
-streamlit-folium
 streamlit
 torch
 transformers
