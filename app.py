@@ -37,11 +37,11 @@ selected_waste = st.selectbox("Choose Waste Type", waste_types)
 if st.button("Generate Waste Image"):
     # Placeholder: random image URLs (replace with your own or integrate later)
     sample_images = {
-        "Plastics": "https://commons.wikimedia.org/wiki/File:Recycling_bottles.JPG",
-        "Paper": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Waste_paper.jpg",
-        "Textiles": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Textile_waste.jpg",
-        "Organics": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Food_waste.jpg",
-        "Mixed_Industrial": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Industrial_waste.jpg"
+        "Plastics": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Plastic_bottles.jpg/640px-Plastic_bottles.jpg",
+        "Paper": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Waste_paper.jpg/640px-Waste_paper.jpg",
+        "Textiles": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Textile_waste.jpg/640px-Textile_waste.jpg",
+        "Organics": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Food_waste.jpg/640px-Food_waste.jpg",
+        "Mixed_Industrial": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Industrial_waste.jpg/640px-Industrial_waste.jpg"
 
     }
     st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
