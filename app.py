@@ -41,7 +41,7 @@ if st.button("Generate Waste Image"):
         "Paper": "https://images.unsplash.com/photo-1627885731215-64906f36809c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",   # Paper/cardboard waste mixed with other trash
         "Textiles": "https://images.unsplash.com/photo-1614792618956-f6d3f26046e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", # Textile waste in a large pile
         "Organics": "https://images.unsplash.com/photo-1594191630713-7f722384c311?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", # Organic waste rotting in a pile
-        "Mixed_Industrial": "https://images.unsplash.com/photo-1610475491176-79cf55171701?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&
+        "Mixed_Industrial": "https://images.unsplash.com/photo-1610475491176-79cf55171701?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&"
     }
     st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
     
