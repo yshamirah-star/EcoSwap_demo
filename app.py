@@ -44,4 +44,4 @@ if st.button("Generate Waste Image"):
         "Mixed_Industrial": "https://i.imgur.com/k2e5y7y.jpg"
     }
     st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
-    }
+    
