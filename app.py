@@ -41,7 +41,7 @@ if st.button("Generate Waste Image"):
         "Paper": "https://i.imgur.com/2s351Dk.jpg",    # Example direct link from Imgur
         "Textiles": "https://i.imgur.com/gK2g05M.jpg",  # Example direct link from Imgur
         "Organics": "https://i.imgur.com/qL3gT1S.jpg",  # Example direct link from Imgur
-        "Mixed_Industrial": "https://i.imgur.com/k2e5y7y.jpg
+        "Mixed_Industrial": "https://i.imgur.com/k2e5y7y.jpg"
     }
     st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
     }
