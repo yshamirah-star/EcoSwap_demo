@@ -37,11 +37,11 @@ selected_waste = st.selectbox("Choose Waste Type", waste_types)
 if st.button("Generate Waste Image"):
     # Placeholder: random image URLs (replace with your own or integrate later)
     sample_images = {
-        "Plastics": "https://i.imgur.com/vHqC3qf.jpg", # Example direct link from Imgur
-        "Paper": "https://i.imgur.com/2s351Dk.jpg",    # Example direct link from Imgur
-        "Textiles": "https://i.imgur.com/gK2g05M.jpg",  # Example direct link from Imgur
-        "Organics": "https://i.imgur.com/qL3gT1S.jpg",  # Example direct link from Imgur
-        "Mixed_Industrial": "https://i.imgur.com/k2e5y7y.jpg"
+       "Plastics": "https://images.pexels.com/photos/10368560/pexels-photo-10368560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "Paper": "https://images.pexels.com/photos/7161725/pexels-photo-7161725.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "Textiles": "https://images.pexels.com/photos/4099516/pexels-photo-4099516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "Organics": "https://images.pexels.com/photos/6157032/pexels-photo-6157032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "Mixed_Industrial": "https://images.pexels.com/photos/3316790/pexels-photo-3316790.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
     st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
     
