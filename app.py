@@ -6,9 +6,12 @@ st.set_page_config(page_title="EcoSwap Demo", layout="wide")
 
 # Sidebar navigation
 st.sidebar.title("EcoSwap Demo")
-section = st.sidebar.radio("Choose a section:", ["Credibility Score", "Waste Image Generator", "Recycler Recommendations"])
+section = st.sidebar.radio(
+    "Choose a section:",
+    ["Credibility Score", "Waste Image Generator", "Recycler Recommendations"]
+)
 
-# Load model
+# Load model once
 model = joblib.load("credibility_model.pkl")
 
 # --- Section: Credibility Score ---
@@ -84,4 +87,3 @@ elif section == "Recycler Recommendations":
             st.markdown("---")
     else:
         st.warning("No recycler companies found for this waste type in Lagos.")
-
