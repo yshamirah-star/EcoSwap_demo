@@ -18,20 +18,22 @@ model = joblib.load("credibility_model.pkl")
 if section == "Credibility Score":
     st.title("Predict Seller Credibility Score")
 
-    quantity = st.number_input("Quantity (kg)", min_value=0.0, step=0.1)
-    price = st.number_input("Price per kg (₦)", min_value=0.0, step=0.01)
-    distance = st.number_input("Delivery Distance (km)", min_value=0.0, step=0.1)
-    saving = st.number_input("Estimated Cost Saving (₦)", min_value=0.0, step=1.0)
+    with st.form("credibility_form"):
+        quantity = st.number_input("Quantity (kg)", min_value=0.0, step=0.1)
+        price = st.number_input("Price per kg (₦)", min_value=0.0, step=0.01)
+        distance = st.number_input("Delivery Distance (km)", min_value=0.0, step=0.1)
+        saving = st.number_input("Estimated Cost Saving (₦)", min_value=0.0, step=1.0)
+        submitted = st.form_submit_button("Predict Seller Score")
 
-    if st.button("Predict Seller Score"):
-        input_data = pd.DataFrame({
-            "quantity_kg": [quantity],
-            "price_per_kg(₦)": [price],
-            "delivery_distance_km": [distance],
-            "estimated_cost_saving(₦)": [saving]
-        })
-        prediction = model.predict(input_data)
-        st.success(f"Predicted Seller Score: {prediction[0]}")
+        if submitted:
+            input_data = pd.DataFrame({
+                "quantity_kg": [quantity],
+                "price_per_kg(₦)": [price],
+                "delivery_distance_km": [distance],
+                "estimated_cost_saving(₦)": [saving]
+            })
+            prediction = model.predict(input_data)
+            st.success(f"Predicted Seller Score: {prediction[0]}")
 
 # --- Section: Waste Image Generator ---
 elif section == "Waste Image Generator":
@@ -87,3 +89,11 @@ elif section == "Recycler Recommendations":
             st.markdown("---")
     else:
         st.warning("No recycler companies found for this waste type in Lagos.")
+
+    
+
+    
+
+    
+        
+            
