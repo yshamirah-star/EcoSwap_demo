@@ -34,14 +34,15 @@ st.header("Generate Waste Image")
 waste_types = ["Plastics", "Paper", "Textiles", "Organics", "Mixed_Industrial"]
 selected_waste = st.selectbox("Choose Waste Type", waste_types)
 
-if st.button("Generate Waste Image"):
-    # Placeholder: random image URLs (replace with your own or integrate later)
+# AI-generated image URLs
+
     sample_images = {
-        "Plastics": "https://images.unsplash.com/photo-1574768399587-f2730103759b?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", # Plastic waste in a dump
-        "Paper": "https://images.unsplash.com/photo-1627885731215-64906f36809c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",   # Paper/cardboard waste mixed with other trash
-        "Textiles": "https://images.unsplash.com/photo-1614792618956-f6d3f26046e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", # Textile waste in a large pile
-        "Organics": "https://images.unsplash.com/photo-1594191630713-7f722384c311?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", # Organic waste rotting in a pile
-        "Mixed_Industrial": "https://images.unsplash.com/photo-1610475491176-79cf55171701?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&"
+    "Plastics": "https://copilot.microsoft.com/th/id/BCO.c37bb345-9c08-4f57-a85e-fcecd80b203e.png",
+    "Paper": "https://copilot.microsoft.com/th/id/BCO.2cc0fa88-a133-4e80-b3e0-25f9ff72e3ef.png",
+    "Textiles": "https://copilot.microsoft.com/th/id/BCO.98f99866-f964-4caa-aa95-2613bf168311.png",
+    "Organics": "https://copilot.microsoft.com/th/id/BCO.97d8d2d3-dd8e-435c-a2d6-5eec59203677.png",
+    "Mixed_Industrial": "https://copilot.microsoft.com/th/id/BCO.5be61b44-40f0-424d-8928-b67fd83b1d17.png"
     }
+if st.button("Generate Waste Image"):
     st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
     
