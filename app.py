@@ -89,11 +89,3 @@ elif section == "Recycler Recommendations":
             st.markdown("---")
     else:
         st.warning("No recycler companies found for this waste type in Lagos.")
-
-    
-
-    
-
-    
-        
-            
