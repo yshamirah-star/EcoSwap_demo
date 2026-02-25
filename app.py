@@ -67,7 +67,16 @@ elif section == "Recycler Recommendations":
             {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Paper & resource management", "Contact": "+234 909 484 6633"}
         ],
         "Textiles": [
-           
+           {"Name": "Street Waste Company Ltd", "Location": "Igbosere Rd, Lagos", "Focus": "Textile & sustainable waste management", "Contact": "info@streetwaste.com.ng"}
+                ],
+                "Organics": [
+                    {"Name": "Agoa Waste Management Co. Ltd", "Location": "Ojuelegba, Lagos", "Focus": "Organic waste recycling", "Contact": "+234 803 456 7890"}
+                ],
+                "Mixed_Industrial": [
+                    {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Industrial waste resource management", "Contact": "+234 909 484 6633"}
+                ]
+
+
 
     
 
