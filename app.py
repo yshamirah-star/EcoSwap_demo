@@ -1,4 +1,5 @@
-import streamlit as st
+
+  import streamlit as st
 import pandas as pd
 import joblib
 
@@ -39,53 +40,61 @@ if section == "Credibility Score":
 elif section == "Waste Image Generator":
     st.title("Generate Waste Image")
 
-    waste_types = ["Plastics", "Paper", "Textiles", "Organics", "Mixed_Industrial"]
-    selected_waste = st.selectbox("Choose Waste Type", waste_types)
+    with st.form("waste_image_form"):
+        waste_types = ["Plastics", "Paper", "Textiles", "Organics", "Mixed_Industrial"]
+        selected_waste = st.selectbox("Choose Waste Type", waste_types)
 
-    sample_images = {
-        "Plastics": "https://copilot.microsoft.com/th/id/BCO.c37bb345-9c08-4f57-a85e-fcecd80b203e.png",
-        "Paper": "https://copilot.microsoft.com/th/id/BCO.2cc0fa88-a133-4e80-b3e0-25f9ff72e3ef.png",
-        "Textiles": "https://copilot.microsoft.com/th/id/BCO.98f99866-f964-4caa-aa95-2613bf168311.png",
-        "Organics": "https://copilot.microsoft.com/th/id/BCO.97d8d2d3-dd8e-435c-a2d6-5eec59203677.png",
-        "Mixed_Industrial": "https://copilot.microsoft.com/th/id/BCO.5be61b44-40f0-424d-8928-b67fd83b1d17.png"
-    }
+        sample_images = {
+            "Plastics": "https://copilot.microsoft.com/th/id/BCO.c37bb345-9c08-4f57-a85e-fcecd80b203e.png",
+            "Paper": "https://copilot.microsoft.com/th/id/BCO.2cc0fa88-a133-4e80-b3e0-25f9ff72e3ef.png",
+            "Textiles": "https://copilot.microsoft.com/th/id/BCO.98f99866-f964-4caa-aa95-2613bf168311.png",
+            "Organics": "https://copilot.microsoft.com/th/id/BCO.97d8d2d3-dd8e-435c-a2d6-5eec59203677.png",
+            "Mixed_Industrial": "https://copilot.microsoft.com/th/id/BCO.5be61b44-40f0-424d-8928-b67fd83b1d17.png"
+        }
 
-    if st.button("Generate Waste Image"):
-        st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
+        submitted = st.form_submit_button("Generate Waste Image")
+        if submitted:
+            st.image(sample_images[selected_waste], caption=f"{selected_waste} Waste", use_column_width=True)
 
 # --- Section: Recycler Recommendations ---
 elif section == "Recycler Recommendations":
     st.title("Recycler Company Recommendations (Lagos)")
 
-    waste_types = ["Plastics", "Paper", "Textiles", "Organics", "Mixed_Industrial"]
-    selected_waste = st.selectbox("Select Waste Type", waste_types)
+    with st.form("recycler_form"):
+        waste_types = ["Plastics", "Paper", "Textiles", "Organics", "Mixed_Industrial"]
+        selected_waste = st.selectbox("Select Waste Type", waste_types)
+        submitted = st.form_submit_button("Find Recyclers")
 
-    recycler_data = {
-        "Plastics": [
-            {"Name": "Green Space Recycling Services Ltd", "Location": "Ikorodu, Lagos", "Focus": "PET plastics recycling", "Contact": "+234 706 218 9738"},
-            {"Name": "Chris Pet Plastics Industry", "Location": "Ojo, Lagos", "Focus": "PET plastics recycling", "Contact": "+234 802 345 6789"}
-        ],
-        "Paper": [
-            {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Paper & resource management", "Contact": "+234 909 484 6633"}
-        ],
-        "Textiles": [
-            {"Name": "Street Waste Company Ltd", "Location": "Igbosere Rd, Lagos", "Focus": "Textile & sustainable waste management", "Contact": "info@streetwaste.com.ng"}
-        ],
-        "Organics": [
-            {"Name": "Agoa Waste Management Co. Ltd", "Location": "Ojuelegba, Lagos", "Focus": "Organic waste recycling", "Contact": "+234 803 456 7890"}
-        ],
-        "Mixed_Industrial": [
-            {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Industrial waste resource management", "Contact": "+234 909 484 6633"}
-        ]
-    }
+        if submitted:
+            recycler_data = {
+                "Plastics": [
+                    {"Name": "Green Space Recycling Services Ltd", "Location": "Ikorodu, Lagos", "Focus": "PET plastics recycling", "Contact": "+234 706 218 9738"},
+                    {"Name": "Chris Pet Plastics Industry", "Location": "Ojo, Lagos", "Focus": "PET plastics recycling", "Contact": "+234 802 345 6789"}
+                ],
+                "Paper": [
+                    {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Paper & resource management", "Contact": "+234 909 484 6633"}
+                ],
+                "Textiles": [
+                    {"Name": "Street Waste Company Ltd", "Location": "Igbosere Rd, Lagos", "Focus": "Textile & sustainable waste management", "Contact": "info@streetwaste.com.ng"}
+                ],
+                "Organics": [
+                    {"Name": "Agoa Waste Management Co. Ltd", "Location": "Ojuelegba, Lagos", "Focus": "Organic waste recycling", "Contact": "+234 803 456 7890"}
+                ],
+                "Mixed_Industrial": [
+                    {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Industrial waste resource management", "Contact": "+234 909 484 6633"}
+                ]
+            }
 
-    companies = recycler_data.get(selected_waste, [])
-    if companies:
-        for recycler in companies:
-            st.subheader(recycler["Name"])
-            st.markdown(f"📍 **Location:** {recycler['Location']}")
-            st.markdown(f"🔄 **Focus:** {recycler['Focus']}")
-            st.markdown(f"📞 **Contact:** {recycler['Contact']}")
-            st.markdown("---")
-    else:
-        st.warning("No recycler companies found for this waste type in Lagos.")
+            companies = recycler_data.get(selected_waste, [])
+            if companies:
+                for recycler in companies:
+                    st.subheader(recycler["Name"])
+                    st.markdown(f"📍 **Location:** {recycler['Location']}")
+                    st.markdown(f"🔄 **Focus:** {recycler['Focus']}")
+                    st.markdown(f"📞 **Contact:** {recycler['Contact']}")
+                    st.markdown("---")
+            else:
+                st.warning("No recycler companies found for this waste type in Lagos.")  
+
+
+            
