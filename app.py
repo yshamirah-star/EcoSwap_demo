@@ -36,7 +36,7 @@ selected_waste = st.selectbox("Choose Waste Type", waste_types)
 
 # AI-generated image URLs
 
-    sample_images = {
+sample_images = {
     "Plastics": "https://copilot.microsoft.com/th/id/BCO.c37bb345-9c08-4f57-a85e-fcecd80b203e.png",
     "Paper": "https://copilot.microsoft.com/th/id/BCO.2cc0fa88-a133-4e80-b3e0-25f9ff72e3ef.png",
     "Textiles": "https://copilot.microsoft.com/th/id/BCO.98f99866-f964-4caa-aa95-2613bf168311.png",
