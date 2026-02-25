@@ -75,6 +75,7 @@ elif section == "Recycler Recommendations":
                 "Mixed_Industrial": [
                     {"Name": "Globetech Remedial Nig Ltd", "Location": "Maryland, Lagos", "Focus": "Industrial waste resource management", "Contact": "+234 909 484 6633"}
                 ]
+    }
 
 
 
